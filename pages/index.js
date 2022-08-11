@@ -1,8 +1,30 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const getData = () => {
+      fetch("https://api.x.immutable.com/v1/assets?collection=0xacb3c6a43d15b907e8433077b6d38ae40936fe2c", {
+        "method": "GET",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      })
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res.result)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+    }
+    getData()
+    console.log(data)
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,13 +37,22 @@ export default function Home() {
       </nav>
 
       <main className={styles.main}>
-      <div className={styles.card}>
-            <img src="https://card.godsunchained.com/?id=1382&q=4" className={styles.cardImg}></img>
+      
+        {data && data.map((item, index) => 
+          <div key={index} className={styles.card}>
+            <img src={item.image_url} alt={item.image_url} className={styles.cardImg}></img>
             <div className={styles.cardDescription}>
-              <p className={styles.desctiptionData}><b>Token address: </b>0xc9403243290483290489328409238094</p>
-              <p className={styles.desctiptionData}><b>User: </b> Ja</p>
+              <p className={styles.desctiptionData}><b>Token address: </b>{item.token_address}</p>
+              <p className={styles.desctiptionData}><b>Token ID: </b>{item.token_id}</p>
+              <p className={styles.desctiptionData}><b>User: </b>{item.token_id}</p>
+              <p className={styles.desctiptionData}><b>Status: </b>{item.status}</p>
+              <p className={styles.desctiptionData}><b>Name: </b>{item.name}</p>
+              <p className={styles.desctiptionData}><b>Created at: </b>{item.created_at}</p>
+              <p className={styles.desctiptionData}><b>Updated at: </b>{item.updated_at}</p>
             </div>
           </div>
+        )}
+
       </main>
 
     </div>
