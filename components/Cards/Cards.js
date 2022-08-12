@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import Modal from 'react-modal'
-import styles from "../../styles/Home.module.css"
+import styles from '../../styles/Home.module.css'
 
 const Cards = ({ data, loading }) => {
 
@@ -44,6 +44,7 @@ const Cards = ({ data, loading }) => {
             )}
           </>
         )}
+
         <Modal isOpen={modalOpened} onRequestClose={() => setModalOpened(false)} style={customStyles}>
           <div className={styles.modalWrapper}>
             <img src={modalData?.metadata?.image} alt={modalData?.metadata?.image} className={styles.modalImg} />
@@ -80,7 +81,7 @@ const Cards = ({ data, loading }) => {
           </div>
         </Modal>
     </>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Cards

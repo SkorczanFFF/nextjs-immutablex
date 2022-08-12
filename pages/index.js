@@ -2,14 +2,12 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import styles from '../styles/Home.module.css'
-
 import Cards from '../components/Cards/Cards'
 import Pagination from '../components/Pagination/Pagination'
 
 export default function Home() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
-
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 10;
 
