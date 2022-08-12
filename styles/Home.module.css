@@ -79,8 +79,8 @@
   cursor: pointer;
 }
 
-.padding {
-  padding: 0;
+.marginRight {
+  margin-right: 1rem;
 }
 
 .modalInfo {
@@ -91,5 +91,46 @@
 .modalInfoColumn {
   display: flex;
   flex-direction: column;
-  width: 135px;
+  width: 140px;
+}
+
+.modalCollection {
+  display: inline-flex;
+}
+
+.modalCollectionIco {
+  width: 40px;
+  margin:  1rem 0;
+}
+
+.modalCollectionName {
+  padding: .5rem 0 0 1rem;
+}
+
+.pagination {
+  margin-bottom: 3rem;
+}
+
+.pagination ul {
+  text-align: center;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline-flex;
+  margin: 0 .25rem;
+  cursor: pointer;
+}
+
+.pageLink {
+  border: none;
+  padding: .5rem .75rem;
+  background-color: #241d00;
+  cursor: pointer;
+  transition: all .25s;
+}
+
+.pageLink:hover {
+  background-color: #ffffff;
+  color: #241d00;
 }
