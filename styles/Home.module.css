@@ -14,8 +14,7 @@
 }
 
 .main {
-  width: 700px;
-  height: 1900px;
+  width: 750px;
   margin: 0 auto;
 }
 
@@ -27,17 +26,70 @@
 }
 
 .cardImg {
-  background-color: rgb(172, 165, 157);
+  background-color: rgb(175, 149, 119);
   height: 272px;
   width: 200px;
   margin-right: 2rem;
   padding: 0 .5rem .5rem 0;
+  cursor: pointer;
 }
 
 .cardDesctiption {
+  background-color: rgb(88, 158, 158);
   padding-top: 2rem;
 }
 
 .desctiptionData {
-  color: rgb(39, 18, 0)
+  word-wrap: break-word;
+  padding: 0;
+  color: #271200
+}
+
+.loading {
+  color:#271200;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+  font-weight: bold;
+}
+
+.modalWrapper {
+  display: inline-flex;
+}
+
+.modalImg {
+  margin-right: 2rem;
+  padding: 0 .5rem .5rem 0;
+  cursor: pointer;
+}
+
+.modalDescription {
+  color: #271200;
+}
+
+.modalStats {
+  display: inline-flex;
+}
+
+.modalBtn {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 0 .65rem .3rem .65rem;
+  cursor: pointer;
+}
+
+.padding {
+  padding: 0;
+}
+
+.modalInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.modalInfoColumn {
+  display: flex;
+  flex-direction: column;
+  width: 135px;
 }
